@@ -1,0 +1,1086 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NEXORA - Build Interfaces That Feel Future-Ready. A modern, responsive developer interface crafted with pure HTML5, CSS3, and Vanilla JavaScript. Built for DecodeLabs Project 1.">
+  <meta name="theme-color" content="#080B14">
+  <title>NEXORA | Build Interfaces That Feel Future-Ready</title>
+
+  <!-- Google Fonts: Inter (Single versatile, high-contrast geometric family across weights) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Core CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Global Header -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a href="#hero" class="brand-logo" aria-label="NEXORA Home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="8" fill="url(#logo-grad)"/>
+            <path d="M9 23V9L23 23V9" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="logo-grad" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#6C63FF"/>
+                <stop offset="1" stop-color="#00D4FF"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <div class="brand-text-group">
+          <span class="logo-text">NEXORA</span>
+          <span class="logo-tagline">Build. Explore. Create.</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#tracks" class="nav-link">Features</a></li>
+          <li><a href="#curriculum" class="nav-link">Architecture</a></li>
+          <li><a href="#roadmap" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Controls -->
+      <div class="header-actions">
+        <!-- Bookmark Tray Trigger -->
+        <button type="button" class="action-btn bookmark-toggle-btn" id="bookmark-tray-btn" aria-label="View saved bookmarks (0 items)">
+          <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <span class="badge" id="bookmark-count" aria-hidden="true">0</span>
+        </button>
+
+        <a href="#tracks" class="btn btn-primary nav-cta">Explore</a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button type="button" class="mobile-menu-toggle" id="menu-toggle-btn" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav-drawer">
+          <span class="hamburger-bar" aria-hidden="true"></span>
+          <span class="hamburger-bar" aria-hidden="true"></span>
+          <span class="hamburger-bar" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Off-Canvas Navigation Drawer -->
+  <div class="mobile-nav-backdrop" id="mobile-nav-backdrop" aria-hidden="true"></div>
+  <aside class="mobile-nav-drawer" id="mobile-nav-drawer" aria-label="Mobile Navigation" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="8" fill="url(#logo-grad-mobile)"/>
+            <path d="M9 23V9L23 23V9" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="logo-grad-mobile" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#6C63FF"/>
+                <stop offset="1" stop-color="#00D4FF"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </span>
+        <span class="logo-text">NEXORA</span>
+      </div>
+      <button type="button" class="drawer-close-btn" id="drawer-close-btn" aria-label="Close navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <nav class="drawer-nav">
+      <ul class="drawer-nav-list">
+        <li><a href="#hero" class="drawer-link">Home</a></li>
+        <li><a href="#tracks" class="drawer-link">Features &amp; Tracks</a></li>
+        <li><a href="#curriculum" class="drawer-link">Architecture Matrix</a></li>
+        <li><a href="#roadmap" class="drawer-link">About Trajectory</a></li>
+        <li><a href="#faq" class="drawer-link">FAQ</a></li>
+        <li><a href="#contact" class="drawer-link">Get in Touch</a></li>
+      </ul>
+    </nav>
+    <div class="drawer-footer">
+      <a href="#tracks" class="btn btn-primary btn-block drawer-cta">Explore Project</a>
+    </div>
+  </aside>
+
+  <!-- Main Content Landmark -->
+  <main id="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero" aria-labelledby="hero-heading">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="badge-dot" aria-hidden="true"></span>
+            <span>NEXORA · Build. Explore. Create.</span>
+          </div>
+          <h1 id="hero-heading" class="hero-title">
+            Build Interfaces That Feel <span class="gradient-text">Future-Ready.</span>
+          </h1>
+          <p class="hero-description">
+            A high-performance frontend interface crafted strictly with HTML5, CSS3, and Vanilla JavaScript. Demonstrating modern responsive architecture, WCAG 2.1 AA accessibility, and zero-framework performance engineering.
+          </p>
+          <div class="hero-cta-group">
+            <a href="#tracks" class="btn btn-primary btn-large">
+              <span>Explore Project</span>
+              <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <button type="button" class="btn btn-secondary btn-large" id="hero-preview-btn">
+              <svg class="icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"></polygon>
+              </svg>
+              <span>View Features</span>
+            </button>
+          </div>
+          
+          <!-- Key Metrics Counter Bar -->
+          <div class="hero-stats" role="region" aria-label="Platform Specifications">
+            <div class="stat-item">
+              <span class="stat-number">0</span>
+              <span class="stat-label">Dependencies</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Vanilla Stack</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number">60 FPS</span>
+              <span class="stat-label">UI Transition</span>
+            </div>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-item">
+              <span class="stat-number">AA</span>
+              <span class="stat-label">WCAG Access</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual / Floating Modern Futuristic UI Composite -->
+        <div class="hero-visual" aria-hidden="true">
+          <div class="hero-mockup-wrapper">
+            <!-- Ambient Glow -->
+            <div class="mockup-glow"></div>
+
+            <!-- Floating Mini Pill 1 -->
+            <div class="floating-badge badge-top">
+              <span class="indicator-dot"></span>
+              <span>Core Web Vitals: <strong>100</strong></span>
+            </div>
+
+            <!-- Main Floating Code/Card Frame -->
+            <div class="code-card">
+              <div class="code-card-header">
+                <div class="window-dots">
+                  <span class="dot dot-red"></span>
+                  <span class="dot dot-yellow"></span>
+                  <span class="dot dot-green"></span>
+                </div>
+                <div class="code-tab-title">nexora.config.js</div>
+                <div class="code-status-badge">ACTIVE</div>
+              </div>
+              <div class="code-card-body">
+                <pre><code><span class="tok-comment">// NEXORA Modern Architecture Blueprint</span>
+<span class="tok-keyword">export const</span> <span class="tok-def">nexoraEngine</span> = {
+  <span class="tok-prop">brand</span>: <span class="tok-string">"NEXORA"</span>,
+  <span class="tok-prop">tagline</span>: <span class="tok-string">"Build. Explore. Create."</span>,
+  <span class="tok-prop">stack</span>: {
+    <span class="tok-prop">markup</span>: <span class="tok-string">"Semantic HTML5"</span>,
+    <span class="tok-prop">styling</span>: <span class="tok-string">"Modern CSS3 (Grid + Flex)"</span>,
+    <span class="tok-prop">logic</span>: <span class="tok-string">"Pure Vanilla ES6+"</span>
+  },
+  <span class="tok-prop">responsive</span>: {
+    <span class="tok-prop">mobileFirst</span>: <span class="tok-keyword">true</span>,
+    <span class="tok-prop">fluidScaling</span>: <span class="tok-string">"clamp(1rem, 4vw, 3.5rem)"</span>,
+    <span class="tok-prop">zeroOverflow</span>: <span class="tok-keyword">true</span>
+  },
+  <span class="tok-prop">status</span>: <span class="tok-string">"Future-Ready"</span>
+};</code></pre>
+              </div>
+              <div class="code-card-footer">
+                <div class="footer-metric">
+                  <span class="metric-bullet"></span>
+                  <span>Framework Bloat: <strong>0 KB</strong></span>
+                </div>
+                <div class="footer-metric">
+                  <span>Accessibility: <strong>100%</strong></span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Mini Pill 2 -->
+            <div class="floating-badge badge-bottom">
+              <span class="indicator-cyan"></span>
+              <span>Responsive Grid · 12 Columns</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Learning Tracks & Interactive Explorer Section -->
+    <section class="tracks-section" id="tracks" aria-labelledby="tracks-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">01 / INTERACTIVE EXPLORER</div>
+          <h2 id="tracks-heading" class="section-title">Curated Architecture Tracks</h2>
+          <p class="section-subtitle">
+            Explore deep-dive technical specializations. Filter by domain category, search keywords, or sort by difficulty level.
+          </p>
+        </div>
+
+        <!-- Filter, Search & View Controls Toolbar -->
+        <div class="tracks-toolbar" role="search" aria-label="Filter and Search Tracks">
+          <div class="search-box">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="track-search-input" class="search-input" placeholder="Search by keyword, tech, or concept (e.g. CSS, Node, Cloud)..." aria-label="Search learning tracks">
+            <button type="button" id="clear-search-btn" class="clear-search-btn" aria-label="Clear search query" hidden>
+              &times;
+            </button>
+          </div>
+
+          <div class="filter-controls-row">
+            <!-- Category Pills -->
+            <div class="category-pills" role="tablist" aria-label="Filter tracks by category">
+              <button type="button" class="pill-btn active" data-category="all" role="tab" aria-selected="true">All Tracks</button>
+              <button type="button" class="pill-btn" data-category="frontend" role="tab" aria-selected="false">Frontend</button>
+              <button type="button" class="pill-btn" data-category="backend" role="tab" aria-selected="false">Backend</button>
+              <button type="button" class="pill-btn" data-category="cloud" role="tab" aria-selected="false">Cloud &amp; DevOps</button>
+              <button type="button" class="pill-btn" data-category="fullstack" role="tab" aria-selected="false">Full Stack</button>
+            </div>
+
+            <!-- Level & Bookmarks Selectors -->
+            <div class="toolbar-dropdowns">
+              <div class="custom-select-wrapper">
+                <label for="difficulty-filter" class="sr-only">Filter by Difficulty</label>
+                <select id="difficulty-filter" class="custom-select">
+                  <option value="all">All Difficulty Levels</option>
+                  <option value="beginner">Beginner Level</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="advanced">Advanced Architecture</option>
+                </select>
+              </div>
+
+              <button type="button" class="btn btn-outline bookmark-filter-toggle" id="bookmark-filter-btn" aria-pressed="false">
+                <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+                </svg>
+                <span>Saved (<span id="saved-filter-count">0</span>)</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Status Bar -->
+        <div class="tracks-status-bar">
+          <div id="results-count-text" class="results-count" aria-live="polite">Showing 6 engineering tracks</div>
+          <button type="button" id="reset-all-filters-btn" class="text-link-btn" hidden>Reset all filters</button>
+        </div>
+
+        <!-- Tracks Cards Grid -->
+        <div class="tracks-grid" id="tracks-grid">
+          <!-- Dynamic cards injected via JavaScript -->
+        </div>
+
+        <!-- Empty State Container -->
+        <div id="tracks-empty-state" class="empty-state" hidden>
+          <div class="empty-icon" aria-hidden="true">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              <line x1="8" y1="11" x2="14" y2="11"></line>
+            </svg>
+          </div>
+          <h3 class="empty-title">No matching tracks found</h3>
+          <p class="empty-description">Try adjusting your search query, switching category tabs, or clearing your active filters.</p>
+          <button type="button" class="btn btn-primary empty-reset-btn" id="empty-state-reset-btn">Reset All Filters</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Curriculum Matrix (Tabbed Interface) -->
+    <section class="curriculum-section" id="curriculum" aria-labelledby="curriculum-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">02 / STRUCTURE &amp; STANDARDS</div>
+          <h2 id="curriculum-heading" class="section-title">Engineering Curriculum Matrix</h2>
+          <p class="section-subtitle">
+            A comprehensive, tiered syllabus developed for rigorous engineering standards. Check off competencies to simulate your career readiness score.
+          </p>
+        </div>
+
+        <!-- Interactive Readiness Scorecard -->
+        <div class="readiness-card">
+          <div class="readiness-header">
+            <div class="readiness-info">
+              <h3 class="readiness-title">Your Skills Readiness Benchmark</h3>
+              <p class="readiness-subtitle">Select competencies below to calculate your current industry benchmark readiness</p>
+            </div>
+            <div class="readiness-meter">
+              <div class="meter-circle">
+                <span class="meter-percent" id="readiness-percent">0%</span>
+              </div>
+              <span class="meter-label" id="readiness-status">Explorer Stage</span>
+            </div>
+          </div>
+          <div class="progress-track" aria-hidden="true">
+            <div class="progress-fill" id="readiness-progress-fill" style="width: 0%;"></div>
+          </div>
+        </div>
+
+        <!-- Accessible Tabs Interface -->
+        <div class="tabs-container">
+          <div class="tab-list" role="tablist" aria-label="Curriculum Modules">
+            <button type="button" class="tab-btn active" id="tab-foundation" role="tab" aria-selected="true" aria-controls="panel-foundation" tabindex="0">
+              <span class="tab-number">01</span>
+              <span class="tab-label">Core Web &amp; DOM Engineering</span>
+            </button>
+            <button type="button" class="tab-btn" id="tab-backend" role="tab" aria-selected="false" aria-controls="panel-backend" tabindex="-1">
+              <span class="tab-number">02</span>
+              <span class="tab-label">Distributed Backend &amp; Data</span>
+            </button>
+            <button type="button" class="tab-btn" id="tab-cloud" role="tab" aria-selected="false" aria-controls="panel-cloud" tabindex="-1">
+              <span class="tab-number">03</span>
+              <span class="tab-label">Cloud Infrastructure &amp; CI/CD</span>
+            </button>
+          </div>
+
+          <!-- Tab Panel 1 -->
+          <div class="tab-panel active" id="panel-foundation" role="tabpanel" aria-labelledby="tab-foundation" tabindex="0">
+            <div class="panel-content-grid">
+              <div class="panel-overview">
+                <h3 class="panel-title">Phase 1: Semantic Web &amp; Performance Engineering</h3>
+                <p class="panel-desc">
+                  Build robust foundations without reliance on heavy frameworks. Understand browser rendering pipelines, reflows, semantic accessibility landmarks, and fluid responsive layouts.
+                </p>
+                <div class="panel-specs">
+                  <div class="spec-pill"><strong>Duration:</strong> 4 Weeks</div>
+                  <div class="spec-pill"><strong>Hands-on Labs:</strong> 12 Real Projects</div>
+                  <div class="spec-pill"><strong>Target Level:</strong> Core Foundation</div>
+                </div>
+              </div>
+              <div class="competency-checklist">
+                <h4 class="checklist-heading">Competency Checklist (Click to track progress):</h4>
+                <ul class="checklist-items" role="group" aria-label="Foundation competencies">
+                  <li>
+                    <label class="checklist-label">
+                      <input type="checkbox" class="skill-checkbox" data-weight="10">
+                      <span class="checkbox-custom" aria-hidden="true"></span>
+                      <span class="skill-name">Semantic HTML5 landmarks &amp; WCAG 2.1 AA keyboard accessibility</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="checklist-label">
+                      <input type="checkbox" class="skill-checkbox" data-weight="10">
+                      <span class="checkbox-custom" aria-hidden="true"></span>
+                      <span class="skill-name">Modern CSS Grid, Flexbox, custom properties &amp; clamp() fluid scaling</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="checklist-label">
+                      <input type="checkbox" class="skill-checkbox" data-weight="10">
+                      <span class="checkbox-custom" aria-hidden="true"></span>
+                      <span class="skill-name">Vanilla ES6+ DOM manipulation, Event delegation &amp; state management</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="checklist-label">
+                      <input type="checkbox" class="skill-checkbox" data-weight="10">
+                      <span class="checkbox-custom" aria-hidden="true"></span>
+                      <span class="skill-name">Browser performance budgeting &amp; Core Web Vitals optimization</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Panel 2 -->
+          <div class="tab-panel" id="panel-backend" role="tabpanel" aria-labelledby="tab-backend" tabindex="0" hidden>
+            <div class="panel-content-grid">
+              <div class="panel-overview">
+                <h3 class="panel-title">Phase 2: Scalable Services, Caching &amp; Resilient APIs</h3>
+                <p class="panel-desc">
+                  Design concurrent asynchronous services with clean architecture principles. Implement fault-tolerant relational and NoSQL schemas, authentication, and microservice communication.
+                </p>
+                <div class="panel-specs">
+                  <div class="spec-pill"><strong>Duration:</strong> 6 Weeks</div>
+                  <div class="spec-pill"><strong>Hands-on Labs:</strong> 8 Production Services</div>
+                  <div class="spec-pill"><strong>Target Level:</strong> Intermediate - Advanced</div>
+                </div>
+              </div>
+              <div class="competency-checklist">
+                <h4 class="checklist-heading">Competency Checklist (Click to track progress):</h4>
+                <ul class="checklist-items" role="group" aria-label="Backend competencies">
+                  <li>
+                    <label class="checklist-label">
+                      <input type="checkbox" class="skill-checkbox" data-weight="15">
+                      <span class="checkbox-custom" aria-hidden="true"></span>
+                      <span class="skill-name">Event Loop mastery, asynchronous streams &amp; worker threads</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="checklist-label">
+                      <input type="checkbox" class="skill-checkbox" data-weight="15">
+                      <span class="checkbox-custom" aria-hidden="true"></span>
+                      <span class="skill-name">PostgreSQL indexing, query plan analysis &amp; Redis distributed caching</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="checklist-label">
+                      <input type="checkbox" class="skill-checkbox" data-weight="15">
+                      <span class="checkbox-custom" aria-hidden="true"></span>
+                      <span class="skill-name">JWT, OAuth2, RBAC security patterns &amp; rate limiting architectures</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Panel 3 -->
+          <div class="tab-panel" id="panel-cloud" role="tabpanel" aria-labelledby="tab-cloud" tabindex="0" hidden>
+            <div class="panel-content-grid">
+              <div class="panel-overview">
+                <h3 class="panel-title">Phase 3: Cloud Native Deployment &amp; Observability</h3>
+                <p class="panel-desc">
+                  Containerize applications with Docker, orchestrate scalable workloads on Kubernetes clusters, and automate zero-downtime CI/CD workflows with monitoring and telemetry.
+                </p>
+                <div class="panel-specs">
+                  <div class="spec-pill"><strong>Duration:</strong> 6 Weeks</div>
+                  <div class="spec-pill"><strong>Hands-on Labs:</strong> 6 Cloud Capstones</div>
+                  <div class="spec-pill"><strong>Target Level:</strong> Advanced Architecture</div>
+                </div>
+              </div>
+              <div class="competency-checklist">
+                <h4 class="checklist-heading">Competency Checklist (Click to track progress):</h4>
+                <ul class="checklist-items" role="group" aria-label="Cloud competencies">
+                  <li>
+                    <label class="checklist-label">
+                      <input type="checkbox" class="skill-checkbox" data-weight="15">
+                      <span class="checkbox-custom" aria-hidden="true"></span>
+                      <span class="skill-name">Multi-stage Docker builds &amp; rootless container security</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="checklist-label">
+                      <input type="checkbox" class="skill-checkbox" data-weight="15">
+                      <span class="checkbox-custom" aria-hidden="true"></span>
+                      <span class="skill-name">Kubernetes deployments, ingress controllers, ConfigMaps &amp; Secrets</span>
+                    </label>
+                  </li>
+                  <li>
+                    <label class="checklist-label">
+                      <input type="checkbox" class="skill-checkbox" data-weight="10">
+                      <span class="checkbox-custom" aria-hidden="true"></span>
+                      <span class="skill-name">Prometheus metrics, Grafana dashboards &amp; OpenTelemetry tracing</span>
+                    </label>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Career Roadmap Section -->
+    <section class="roadmap-section" id="roadmap" aria-labelledby="roadmap-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">03 / PROGRESSION</div>
+          <h2 id="roadmap-heading" class="section-title">Frontend to Systems Trajectory</h2>
+          <p class="section-subtitle">
+            Understand how each phase systematically elevates you from foundational coder to senior full stack systems architect.
+          </p>
+        </div>
+
+        <!-- Interactive Roadmap Stepper Bar -->
+        <div class="roadmap-stepper-container" role="region" aria-label="Career Milestones">
+          <div class="stepper-nav" role="tablist" aria-label="Roadmap stages">
+            <button type="button" class="step-btn active" data-step="0" role="tab" aria-selected="true" aria-controls="roadmap-card">
+              <span class="step-circle">1</span>
+              <span class="step-text">
+                <span class="step-sub">Phase 01</span>
+                <span class="step-main">Junior / Associate</span>
+              </span>
+            </button>
+            <div class="step-connector" aria-hidden="true"></div>
+            <button type="button" class="step-btn" data-step="1" role="tab" aria-selected="false" aria-controls="roadmap-card">
+              <span class="step-circle">2</span>
+              <span class="step-text">
+                <span class="step-sub">Phase 02</span>
+                <span class="step-main">Mid-Level Full Stack</span>
+              </span>
+            </button>
+            <div class="step-connector" aria-hidden="true"></div>
+            <button type="button" class="step-btn" data-step="2" role="tab" aria-selected="false" aria-controls="roadmap-card">
+              <span class="step-circle">3</span>
+              <span class="step-text">
+                <span class="step-sub">Phase 03</span>
+                <span class="step-main">Senior Engineer</span>
+              </span>
+            </button>
+            <div class="step-connector" aria-hidden="true"></div>
+            <button type="button" class="step-btn" data-step="3" role="tab" aria-selected="false" aria-controls="roadmap-card">
+              <span class="step-circle">4</span>
+              <span class="step-text">
+                <span class="step-sub">Phase 04</span>
+                <span class="step-main">Staff / Principal Architect</span>
+              </span>
+            </button>
+          </div>
+
+          <!-- Dynamic Roadmap Detail Card -->
+          <div class="roadmap-detail-card" id="roadmap-card" role="region" aria-live="polite">
+            <div class="roadmap-card-header">
+              <div class="roadmap-stage-badge" id="roadmap-badge">Phase 01 · Milestone</div>
+              <h3 class="roadmap-stage-title" id="roadmap-title">Frontend Foundations &amp; Clean Web Standards</h3>
+              <p class="roadmap-stage-desc" id="roadmap-desc">
+                Focuses on writing semantic, zero-dependency HTML5/CSS3 and modular Vanilla JavaScript. You build accessible UI components, handle asynchronous API requests, and follow mobile-first responsive architecture principles.
+              </p>
+            </div>
+            <div class="roadmap-card-grid">
+              <div class="roadmap-column">
+                <h4 class="roadmap-col-title">Core Competencies Acquired</h4>
+                <ul class="roadmap-skill-list" id="roadmap-skills">
+                  <li>Accessible DOM &amp; Semantic HTML5 Structure</li>
+                  <li>Modern CSS Grid, Flexbox &amp; Fluid Typography</li>
+                  <li>Asynchronous Fetch, Event Delegation &amp; Local Storage</li>
+                  <li>Cross-Browser Compatibility &amp; Responsive Audits</li>
+                </ul>
+              </div>
+              <div class="roadmap-column">
+                <h4 class="roadmap-col-title">Expected Deliverable &amp; Capstone</h4>
+                <div class="capstone-box" id="roadmap-capstone">
+                  <strong>Signature Project:</strong> Responsive Design System &amp; Interactive Application Catalog with full keyboard navigability and WCAG AA compliance.
+                </div>
+                <div class="salary-estimate" id="roadmap-time">
+                  <strong>Estimated Timeline:</strong> 4 - 6 Weeks dedicated practice
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accessible FAQ Accordion Section -->
+    <section class="faq-section" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <div class="section-header text-center">
+          <div class="section-badge">04 / ARCHITECTURE &amp; FAQ</div>
+          <h2 id="faq-heading" class="section-title">Frequently Asked Questions</h2>
+          <p class="section-subtitle">
+            Clear technical rationale behind zero-dependency Vanilla development and responsive design fundamentals.
+          </p>
+        </div>
+
+        <div class="faq-accordion" id="faq-accordion" role="region" aria-label="FAQ Accordion">
+          
+          <!-- Accordion Item 1 -->
+          <div class="accordion-item">
+            <h3>
+              <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-ans-1" id="faq-q-1">
+                <span>Why prioritize Vanilla HTML, CSS, and JS fundamentals over frameworks?</span>
+                <span class="accordion-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div id="faq-ans-1" class="accordion-panel" role="region" aria-labelledby="faq-q-1" hidden>
+              <div class="accordion-body">
+                Frameworks come and go, but the browser platform remains constant. By deeply mastering semantic HTML5, CSS layout engines (Grid/Flexbox/clamp), and modern Vanilla JavaScript ES6+, engineers develop an intuitive understanding of the DOM, rendering performance, and accessibility. This enables you to pick up any framework in days rather than months.
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 2 -->
+          <div class="accordion-item">
+            <h3>
+              <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-ans-2" id="faq-q-2">
+                <span>How does NEXORA ensure seamless responsiveness across all viewports?</span>
+                <span class="accordion-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div id="faq-ans-2" class="accordion-panel" role="region" aria-labelledby="faq-q-2" hidden>
+              <div class="accordion-body">
+                NEXORA is built on a mobile-first architecture utilizing fluid CSS clamp() scales for typography and spacing, CSS Grid with minmax() for flexible card distribution, and Flexbox for small-scale alignment. This completely eliminates horizontal scrolling and ensures layout integrity from 320px mobile screens to 1440px+ ultra-wide monitors.
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 3 -->
+          <div class="accordion-item">
+            <h3>
+              <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-ans-3" id="faq-q-3">
+                <span>How are capstone projects evaluated and graded for production quality?</span>
+                <span class="accordion-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div id="faq-ans-3" class="accordion-panel" role="region" aria-labelledby="faq-q-3" hidden>
+              <div class="accordion-body">
+                Every capstone is audited against a 5-pillar rubric: Semantic Structure &amp; Standards, Accessibility (WCAG 2.1 AA), Performance &amp; Core Web Vitals, Architectural Cleanliness (separation of concerns, error handling), and Automated Test Coverage.
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 4 -->
+          <div class="accordion-item">
+            <h3>
+              <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-ans-4" id="faq-q-4">
+                <span>What background or prior programming experience is required to start?</span>
+                <span class="accordion-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div id="faq-ans-4" class="accordion-panel" role="region" aria-labelledby="faq-q-4" hidden>
+              <div class="accordion-body">
+                Basic literacy in computer science concepts or beginner-level experience with HTML/CSS is helpful. Our Foundation Track starts from first principles, while Intermediate and Advanced tracks have clear prerequisite guides provided inside each syllabus.
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 5 -->
+          <div class="accordion-item">
+            <h3>
+              <button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-ans-5" id="faq-q-5">
+                <span>Is this project compliant with WCAG 2.1 AA accessibility guidelines?</span>
+                <span class="accordion-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                  </svg>
+                </span>
+              </button>
+            </h3>
+            <div id="faq-ans-5" class="accordion-panel" role="region" aria-labelledby="faq-q-5" hidden>
+              <div class="accordion-body">
+                Yes. NEXORA is built with complete keyboard navigability (Tab/Shift+Tab, Arrow keys, Esc), high-contrast visual states, aria-modal dialog traps, aria-expanded accordion triggers, and prefers-reduced-motion support.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Registration / Consultation Form Section -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+      <div class="container contact-layout">
+        
+        <!-- Info Column -->
+        <div class="contact-info-col">
+          <div class="section-badge">05 / GET IN TOUCH</div>
+          <h2 id="contact-heading" class="section-title">Request Syllabus &amp; Start Building</h2>
+          <p class="section-subtitle">
+            Speak with an academic advisor, receive detailed syllabus PDFs, and review customized learning tracks tailored to your career goals.
+          </p>
+
+          <div class="info-features">
+            <div class="info-feature-item">
+              <div class="feature-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                  <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+              </div>
+              <div>
+                <h3 class="feature-title">Personalized Architecture Review</h3>
+                <p class="feature-desc">We evaluate your current engineering strengths and recommend the exact starting track.</p>
+              </div>
+            </div>
+
+            <div class="info-feature-item">
+              <div class="feature-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="feature-title">Zero Framework Bloat</h3>
+                <p class="feature-desc">Experience lightning-fast client-side state management using native browser APIs.</p>
+              </div>
+            </div>
+
+            <div class="info-feature-item">
+              <div class="feature-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="feature-title">100% Commitment to Accessibility</h3>
+                <p class="feature-desc">Inclusive curriculum with accessible tooling, structured documentation, and live captions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Column with Real-time Validation -->
+        <div class="contact-form-col">
+          <div class="form-card">
+            <h3 class="form-title">Request Track Syllabus &amp; Consultation</h3>
+            <p class="form-subtitle">Fill out this quick form and our admissions team will respond within 24 hours.</p>
+
+            <form id="consultation-form" class="consultation-form" novalidate>
+              
+              <!-- Full Name Field -->
+              <div class="form-group" id="group-fullname">
+                <label for="fullname" class="form-label">
+                  Full Name <span class="required-star" aria-hidden="true">*</span>
+                </label>
+                <input type="text" id="fullname" name="fullname" class="form-input" placeholder="e.g. Alex Morgan" required autocomplete="name" aria-describedby="fullname-error">
+                <div id="fullname-error" class="form-error" role="alert"></div>
+              </div>
+
+              <!-- Email Address Field -->
+              <div class="form-group" id="group-email">
+                <label for="email" class="form-label">
+                  Work / Personal Email <span class="required-star" aria-hidden="true">*</span>
+                </label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="alex@company.com" required autocomplete="email" aria-describedby="email-error">
+                <div id="email-error" class="form-error" role="alert"></div>
+              </div>
+
+              <!-- Track Selection -->
+              <div class="form-group" id="group-track">
+                <label for="preferred-track" class="form-label">
+                  Primary Track of Interest <span class="required-star" aria-hidden="true">*</span>
+                </label>
+                <select id="preferred-track" name="track" class="form-select" required aria-describedby="track-error">
+                  <option value="" disabled selected>Select a track...</option>
+                  <option value="frontend">Frontend Architecture &amp; UI Systems</option>
+                  <option value="backend">Distributed Backend &amp; Microservices</option>
+                  <option value="cloud">Cloud-Native DevOps &amp; Kubernetes</option>
+                  <option value="fullstack">Enterprise Full Stack Capstone</option>
+                </select>
+                <div id="track-error" class="form-error" role="alert"></div>
+              </div>
+
+              <!-- Experience Level Radios -->
+              <fieldset class="form-group" id="group-experience">
+                <legend class="form-label">Current Experience Level <span class="required-star" aria-hidden="true">*</span></legend>
+                <div class="radio-options-grid">
+                  <label class="radio-option">
+                    <input type="radio" name="experience" value="beginner" required>
+                    <span class="radio-custom" aria-hidden="true"></span>
+                    <span class="radio-text">Beginner (0-1 yr)</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="experience" value="intermediate">
+                    <span class="radio-custom" aria-hidden="true"></span>
+                    <span class="radio-text">Mid-Level (2-4 yrs)</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="experience" value="advanced">
+                    <span class="radio-custom" aria-hidden="true"></span>
+                    <span class="radio-text">Senior / Architect (5+ yrs)</span>
+                  </label>
+                </div>
+                <div id="experience-error" class="form-error" role="alert"></div>
+              </fieldset>
+
+              <!-- Message / Objectives -->
+              <div class="form-group" id="group-message">
+                <div class="label-with-counter">
+                  <label for="message" class="form-label">Learning Goals / Background (Optional)</label>
+                  <span class="char-counter" id="message-char-count" aria-live="polite">0 / 250</span>
+                </div>
+                <textarea id="message" name="message" class="form-textarea" rows="3" maxlength="250" placeholder="Tell us what you hope to build or achieve in this program..."></textarea>
+              </div>
+
+              <!-- Terms Checkbox -->
+              <div class="form-group" id="group-terms">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="terms" name="terms" required aria-describedby="terms-error">
+                  <span class="checkbox-custom" aria-hidden="true"></span>
+                  <span class="terms-text">I agree to receive the NEXORA syllabus and course communication. Privacy is strictly respected.</span>
+                </label>
+                <div id="terms-error" class="form-error" role="alert"></div>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="btn btn-primary btn-block submit-btn" id="submit-btn">
+                <span class="submit-text">Submit Application Request</span>
+                <span class="spinner" aria-hidden="true" hidden></span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer Landmark -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-grid">
+      
+      <!-- Brand & Mission Column -->
+      <div class="footer-col brand-col">
+        <a href="#hero" class="brand-logo footer-logo" aria-label="NEXORA Home">
+          <span class="logo-mark" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="32" height="32" rx="8" fill="url(#logo-grad-footer)"/>
+              <path d="M9 23V9L23 23V9" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <defs>
+                <linearGradient id="logo-grad-footer" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#6C63FF"/>
+                  <stop offset="1" stop-color="#00D4FF"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </span>
+          <span class="logo-text">NEXORA</span>
+        </a>
+        <p class="footer-tagline-text">Build. Explore. Create.</p>
+        <p class="footer-mission">
+          Dedicated to engineering fundamentals, architectural craftsmanship, and production rigor. Empowering developers to build resilient, accessible, and scalable systems.
+        </p>
+        <div class="footer-social-links" aria-label="Social and Community Links">
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="NEXORA on GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="NEXORA on LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="NEXORA on X (Twitter)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick Navigation Column -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Features</h4>
+        <ul class="footer-links">
+          <li><a href="#tracks" class="footer-link">Frontend Architecture</a></li>
+          <li><a href="#tracks" class="footer-link">Distributed Node.js Systems</a></li>
+          <li><a href="#tracks" class="footer-link">Cloud Native Kubernetes</a></li>
+          <li><a href="#tracks" class="footer-link">Enterprise Full Stack</a></li>
+          <li><a href="#curriculum" class="footer-link">Curriculum Matrix</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources Column -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Architecture</h4>
+        <ul class="footer-links">
+          <li><a href="#roadmap" class="footer-link">Career Trajectory Roadmap</a></li>
+          <li><a href="#faq" class="footer-link">Platform FAQ</a></li>
+          <li><a href="#hero" class="footer-link">WCAG Accessibility Standards</a></li>
+          <li><a href="#tracks" class="footer-link">Interactive Catalog</a></li>
+          <li><a href="#contact" class="footer-link">Contact Admissions</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter Column -->
+      <div class="footer-col newsletter-col">
+        <h4 class="footer-heading">Architecture Dispatch</h4>
+        <p class="footer-newsletter-text">Receive bi-weekly deep dives into system design, CSS architecture, and scalable engineering patterns.</p>
+        
+        <form id="newsletter-form" class="newsletter-form" novalidate>
+          <div class="newsletter-input-group">
+            <label for="newsletter-email" class="sr-only">Email address for newsletter</label>
+            <input type="email" id="newsletter-email" name="newsletter-email" class="newsletter-input" placeholder="you@domain.com" required>
+            <button type="submit" class="btn btn-primary newsletter-btn" aria-label="Subscribe to newsletter">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </div>
+          <div id="newsletter-feedback" class="newsletter-feedback" role="alert"></div>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- Bottom Footer Bar -->
+    <div class="footer-bottom">
+      <div class="container footer-bottom-container">
+        <p class="copyright-text">
+          &copy; <span id="current-year">2026</span> NEXORA. Built for DecodeLabs Project 1 · Crafted with semantic HTML5, CSS3 &amp; Vanilla JavaScript.
+        </p>
+        <div class="footer-bottom-links">
+          <span class="a11y-badge">WCAG 2.1 AA Compliant</span>
+          <button type="button" class="back-to-top-btn" id="back-to-top-btn" aria-label="Back to top of page">
+            <span>Top</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Track Detail Modal -->
+  <div class="modal-backdrop" id="modal-backdrop" aria-hidden="true" hidden></div>
+  <div class="modal-dialog" id="track-modal" role="dialog" aria-modal="true" aria-labelledby="modal-track-title" hidden>
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-tags" id="modal-track-tags">
+          <!-- Injected via JS -->
+        </div>
+        <button type="button" class="modal-close-btn" id="modal-close-btn" aria-label="Close track details modal">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h3 class="modal-title" id="modal-track-title">Track Title</h3>
+        <p class="modal-description" id="modal-track-desc">Track Description</p>
+        
+        <div class="modal-specs-grid" id="modal-track-specs">
+          <!-- Injected via JS -->
+        </div>
+
+        <div class="modal-section">
+          <h4 class="modal-section-title">Key Learning Outcomes</h4>
+          <ul class="modal-outcomes-list" id="modal-track-outcomes">
+            <!-- Injected via JS -->
+          </ul>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="modal-section-title">Signature Capstone Deliverable</h4>
+          <p class="modal-capstone-text" id="modal-track-capstone">Capstone project details...</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" id="modal-bookmark-btn">
+          <svg class="icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
+          </svg>
+          <span id="modal-bookmark-text">Save Track</span>
+        </button>
+        <a href="#contact" class="btn btn-primary" id="modal-enroll-btn">Apply For This Track</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Platform Tour / Preview Modal -->
+  <div class="modal-dialog" id="tour-modal" role="dialog" aria-modal="true" aria-labelledby="tour-modal-title" hidden>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="tour-modal-title">NEXORA Architecture &amp; Platform Tour</h3>
+        <button type="button" class="modal-close-btn" id="tour-close-btn" aria-label="Close platform tour modal">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body tour-body">
+        <div class="tour-highlight-box">
+          <h4>🚀 The NEXORA 4-Pillar Engineering Standard</h4>
+          <p>Built as a modern, zero-dependency product landing page designed to demonstrate pure web engineering:</p>
+        </div>
+        <div class="tour-features-list">
+          <div class="tour-feature">
+            <div class="tour-num">01</div>
+            <div>
+              <strong>Pure Web Fundamentals:</strong> Built with semantic HTML5 landmarks, modern CSS Grid/Flexbox, and modular Vanilla JavaScript.
+            </div>
+          </div>
+          <div class="tour-feature">
+            <div class="tour-num">02</div>
+            <div>
+              <strong>Rigorous WCAG 2.1 AA Standards:</strong> 100% keyboard navigable with accessible focus traps, ARIA roles, and high-contrast dark palette.
+            </div>
+          </div>
+          <div class="tour-feature">
+            <div class="tour-num">03</div>
+            <div>
+              <strong>Zero Framework Overhead:</strong> Lightning-fast client-side state, live search, debounce filters, and localStorage persistence.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" id="tour-dismiss-btn">Got It</button>
+        <a href="#tracks" class="btn btn-primary" id="tour-explore-btn">Browse Catalog</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bookmarks Tray Modal/Drawer -->
+  <div class="modal-dialog bookmarks-modal" id="bookmarks-modal" role="dialog" aria-modal="true" aria-labelledby="bookmarks-modal-title" hidden>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="bookmarks-modal-title">Saved Learning Tracks</h3>
+        <button type="button" class="modal-close-btn" id="bookmarks-close-btn" aria-label="Close saved tracks">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="bookmarks-list-container" class="bookmarks-list">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline" id="clear-all-bookmarks-btn">Clear All</button>
+        <button type="button" class="btn btn-primary" id="bookmarks-done-btn">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Vanilla JavaScript Logic -->
+  <script src="js/script.js"></script>
+</body>
+</html>
