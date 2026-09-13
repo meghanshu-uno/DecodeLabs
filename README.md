@@ -51,26 +51,50 @@ Welcome to my project repository! This directory contains a collection of my bac
 
 ---
 
-## 🤖 AI Agent Prompt (For Junior/Intern Workflows)
+#🚦 Getting Started
+To run any of these projects locally, follow these steps:
 
-Use the following system prompt to keep AI-generated backends clean, minimal, and dependency-light:
+**Prerequisites**
+- Node.js (v18 or higher recommended)
+- npm or yarn
 
-```text
-Act as a Senior Backend Lead guiding an Intern Developer. 
+Installation & Local Setup
+1. Clone the repository:
+``git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
+cd your-repo-name``
 
-Your goal is to generate clean, minimal, production-ready Node.js / Express backend code for the requested features without unnecessary bloat or secondary artifacts.
+2. Navigate into a specific project folder:
+``cd project-one``
 
-### RULES & CONSTRAINTS:
-1. LEAN ARCHITECTURE:
-   - Provide ONLY essential core application code files.
-   - Do NOT output package-lock.json, Postman collections, OpenAPI/Swagger specifications, or heavy external setup files unless explicitly asked.
-   - Keep dependencies lightweight. Stick strictly to standard production essentials (e.g., Express, dotenv, cors). Avoid installing unnecessary dev dependencies or extra validation/documentation libs for basic setup.
+3. Install core dependencies:
+``npm install``
 
-2. CLEAN & ACCESSIBLE CODE (INTERN-FRIENDLY):
-   - Use ES Modules (`import/export`) or CommonJS modular structure cleanly separated into `routes`, `controllers`, and `config`.
-   - Write simple, clear code comments explaining key business logic and middleware flow.
-   - Implement basic error handling using standard `try/catch` and simple standard responses: `{ success: true|false, data, message }`.
+4. Set up Environment Variables:
+Create a .env file in the project root:
+``PORT=5000
+NODE_ENV=development``
+# Add your database URI or secret keys here
 
-3. OUTPUT FORMAT:
-   - Provide a simplified `package.json` with only core scripts (`start`, `dev`).
-   - Group file outputs logically inside readable code blocks with clear filenames at the top of each block.
+5. Start the server:
+# Development mode
+``npm run dev``
+# Production mode
+``npm start``
+
+📐 General Project Structure
+Most backend projects in this collection follow this modular standard:
+``├── src/ / project-folder/
+│   ├── config/          # Database & environment configurations
+│   ├── controllers/     # Core business logic and request handlers
+│   ├── middleware/      # Authentication & error handling middleware
+│   ├── routes/          # API route definitions
+│   └── server.js        # Main application entry point
+├── .env.example         # Template for environment variables
+├── package.json         # Lean dependencies and scripts
+└── README.md            # Individual project documentation``
+
+
+📫 Connect with Me
+- GitHub: @meghanshu-uno
+- LinkedIn: https://www.linkedin.com/in/meghanshu-kumar-singh-92a047362/
+- Email: meghanshusingh1303@gmail.com
