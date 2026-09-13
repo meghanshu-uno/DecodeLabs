@@ -51,7 +51,7 @@ Welcome to my project repository! This directory contains a collection of my bac
 
 ---
 
-#🚦 Getting Started
+**🚦 Getting Started**
 To run any of these projects locally, follow these steps:
 
 **Prerequisites**
