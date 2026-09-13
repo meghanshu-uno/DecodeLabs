@@ -81,6 +81,11 @@ NODE_ENV=development``
 # Production mode
 ``npm start``
 
+📫 Connect with Me
+- GitHub: @meghanshu-uno
+- LinkedIn: https://www.linkedin.com/in/meghanshu-kumar-singh-92a047362/
+- Email: meghanshusingh1303@gmail.com
+
 📐 General Project Structure
 Most backend projects in this collection follow this modular standard:
 ```├── src/ / project-folder/
@@ -92,9 +97,3 @@ Most backend projects in this collection follow this modular standard:
 ├── .env.example         # Template for environment variables
 ├── package.json         # Lean dependencies and scripts
 └── README.md            # Individual project documentation```
-
-
-📫 Connect with Me
-- GitHub: @meghanshu-uno
-- LinkedIn: https://www.linkedin.com/in/meghanshu-kumar-singh-92a047362/
-- Email: meghanshusingh1303@gmail.com
