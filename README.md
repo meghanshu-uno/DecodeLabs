@@ -83,7 +83,7 @@ NODE_ENV=development``
 
 📐 General Project Structure
 Most backend projects in this collection follow this modular standard:
-``├── src/ / project-folder/
+```├── src/ / project-folder/
 │   ├── config/          # Database & environment configurations
 │   ├── controllers/     # Core business logic and request handlers
 │   ├── middleware/      # Authentication & error handling middleware
@@ -91,7 +91,7 @@ Most backend projects in this collection follow this modular standard:
 │   └── server.js        # Main application entry point
 ├── .env.example         # Template for environment variables
 ├── package.json         # Lean dependencies and scripts
-└── README.md            # Individual project documentation``
+└── README.md            # Individual project documentation```
 
 
 📫 Connect with Me
